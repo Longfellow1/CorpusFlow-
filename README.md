@@ -237,9 +237,9 @@ Copyright 2026 Harland.
 
 ## 作者
 
-**Harland** —— AI 系统、大模型、以及驱动它们的数据。
+**Harland** —— AI Native 产品经理。
 
-- 邮箱: haolang95@gmail.com
+- 邮箱: Harland5588@gmail.com
 - GitHub: [@Longfellow1](https://github.com/Longfellow1)
 
 ---
