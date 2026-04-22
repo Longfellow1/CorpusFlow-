@@ -1,0 +1,51 @@
+# Environment variables
+.env
+.env.local
+!.env.example
+
+# Dependencies
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# Build outputs
+build/
+dist/
+.next/
+
+# Testing & coverage
+coverage/
+.pytest_cache/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+
+# Playwright
+.playwright-mcp/
+
+# Runtime data
+data/
+
+# Internal docs & assets — keep repo clean, nothing proprietary in the open
+.claude/
+*.pdf
+UI原图.jpg
+UI原图.png
+metadata.json

@@ -1,0 +1,52 @@
+{
+  "analyze": [
+    {
+      "sentence": "我想吃松鹤楼的黄鱼",
+      "mustContainInIntent": ["用户", "想"],
+      "expectedObject": "黄鱼"
+    },
+    {
+      "sentence": "帮我打开后盖",
+      "mustContainInIntent": ["用户", "打开"],
+      "expectedAction": "打开"
+    },
+    {
+      "sentence": "量子纠缠什么原理",
+      "mustContainInIntent": ["用户", "询问"],
+      "expectedSubject": "量子纠缠"
+    }
+  ],
+  "fineTune": {
+    "taskName": "回归测试-精调主链",
+    "seed": "帮我打开后盖",
+    "analysis": {
+      "intent": "用户想要打开车辆后备箱尾门",
+      "subject": "用户",
+      "action": "打开",
+      "object": "后盖",
+      "modifiers": "帮我"
+    },
+    "style": "更口语一点",
+    "manualExpansionDraft": "后备箱,尾门"
+  },
+  "generate": {
+    "taskName": "回归测试-正式生成",
+    "mode": "single",
+    "expansionRatio": 6,
+    "overallRequirement": "生成自然的车控query，避免模板感",
+    "styleAdjustment": "更口语一点"
+  },
+  "quickGenerate": {
+    "taskName": "回归测试-快速任务",
+    "mode": "quick",
+    "expansionRatio": 4,
+    "overallRequirement": "快速生成适合测试的车控query，优先吞吐",
+    "styleAdjustment": "口语化",
+    "maxDurationSeconds": 45,
+    "seeds": [
+      "帮我打开后盖",
+      "我想看舌尖上的中国",
+      "查一下周杰伦最近的演唱会行程"
+    ]
+  }
+}

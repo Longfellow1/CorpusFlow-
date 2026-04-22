@@ -1,0 +1,24 @@
+services:
+  algorithm:
+    build:
+      context: ./algorithm
+    environment:
+      ARK_BASE_URL: "${ARK_BASE_URL:-https://ark.cn-beijing.volces.com/api/v3}"
+      ARK_API_KEY: "${ARK_API_KEY:-}"
+      ARK_MODEL: "${ARK_MODEL:-doubao-seed-1-6-250615}"
+    ports:
+      - "8001:8001"
+
+  app:
+    build:
+      context: .
+    depends_on:
+      - algorithm
+    environment:
+      PORT: "3000"
+      ALGORITHM_BASE_URL: "http://algorithm:8001"
+      ARK_BASE_URL: "${ARK_BASE_URL:-https://ark.cn-beijing.volces.com/api/v3}"
+      ARK_API_KEY: "${ARK_API_KEY:-}"
+      ARK_MODEL: "${ARK_MODEL:-doubao-seed-1-6-250615}"
+    ports:
+      - "3000:3000"
